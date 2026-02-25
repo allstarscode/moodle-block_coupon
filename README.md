@@ -1,3 +1,27 @@
+# Ecademy Fork — Sebsoft Coupon Plugin                                                                                                                                                                                                                                        
+  > Dies ist ein **Fork** des [Original-Plugins von Sebsoft](https://github.com/sebsoftnl/moodle-block_coupon).                                                                                                                                                                                                                                                                                                                                                                                            
+  ## Anpassungen in diesem Fork                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+  - **`{url}` Platzhalter in Coupon-PDFs**: Neuer Platzhalter `{url}` in der PDF-Generierung, der einen Link zur Coupon-Einlösung erzeugt
+  - **Angepasstes PDF-Template**: Vereinfachter Standard-Text im Coupon-PDF ohne Kurs- und Rollenangabe
+
+  ## Updates vom Original-Repo einspielen
+
+  ```bash
+  cd src/blocks/coupon
+  git fetch upstream
+  git merge upstream/main
+  # Konflikte lösen (vor allem in den oben genannten Dateien), dann:
+  git add .
+  git commit -m "Merge upstream update"
+  git push
+
+  Falls upstream noch nicht konfiguriert ist:
+
+  git remote add upstream https://github.com/sebsoftnl/moodle-block_coupon.git
+
+-------------------------------------------------------------------------------------------------------------
+---------------------------------------------ORIGINAL README-------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 
 SEBSOFT COUPON PLUGIN
 
@@ -83,3 +107,4 @@ For those paying attention, creating cohort type coupons thus enables a simple
 way of enrolling users into multiple courses at once just by configuring the right
 cohort enrolments in multiple courses.
 That's still not to say course coupons can't be used in a similar way (using meta courses).
+
