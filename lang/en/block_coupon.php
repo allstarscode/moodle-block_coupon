@@ -272,11 +272,11 @@ $string['default-coupon-page-template-botright'] = '<ol>
 <li>Enter your coupon code in the Moodle Coupon block</li>
 <li>Happy learning!</li>
 </ol>';
-$string['default-coupon-page-template-main'] = 'With this coupon you can activate access to the following e-learning module(s):<br/>
-{courses} ({role})<br/><br/>
-You have {accesstime} access to this module.<br/><br/>
-Please use the following coupon code to activate access<br/>
-{coupon_code}';
+$string['default-coupon-page-template-main'] = '
+  You have {accesstime} access to this module.<br/><br/>
+  Please use the following coupon code to activate access<br/>
+  {coupon_code}<br/>
+  {url}';
 $string['delete:coursegrouping:confirmmessage'] = 'I want to delete this course grouping';
 $string['delete:coursegrouping:header'] = 'Confirm deletion of coursegrouping';
 $string['delete:coursegrouping:successmsg'] = 'Coursegrouping successfully deleted';

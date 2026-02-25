@@ -538,11 +538,14 @@ class pdf extends \pdf {
      */
     protected function compile_main($coupon, $courses) {
         global $DB;
+        global $CFG;
+
         $find = [
             '{coupon_code}',
             '{accesstime}',
             '{courses}',
             '{role}',
+            '{url}',
         ];
         if ((int)$coupon->enrolperiod === 0) {
             $accesstime = get_string('unlimited_access', 'block_coupon');
@@ -560,12 +563,19 @@ class pdf extends \pdf {
 
         $coursenames = array_column($courses, 'shortname');
 
+        $url = new \moodle_url($CFG->wwwroot . '/blocks/coupon/view/qrin.php', [
+            'c' => $coupon->submission_code,
+            'h' => sha1($coupon->id . $coupon->ownerid . $coupon->submission_code),
+        ]);
+
         $replace = [
-            '<div style="text-align: center; font-size: 200%; font-weight: bold">' . $coupon->submission_code . '</div>',
+            '<div style="text-align: center; font-size: 200%; font-weight: bold">'.$coupon->submission_code.'</div>',
             $accesstime,
-            '<b>' . implode(', ', $coursenames) . '</b>',
+            '<b>'.implode(', ', $coursenames).'</b>',
             $rolename,
+            '<a href="'.$url->out(false).'">URL</a>',  // <-- NEU
         ];
+
 
         return str_replace($find, $replace, $this->templatemain);
     }
