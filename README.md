@@ -14,6 +14,7 @@
   git add .
   git commit -m "Merge upstream update"
   git push
+  ```
 
   Falls upstream noch nicht konfiguriert ist:
 
@@ -106,4 +107,5 @@
   cohort enrolments in multiple courses.
   That's still not to say course coupons can't be used in a similar way (using meta courses).
   
+
 
